@@ -1,0 +1,56 @@
+.container {
+    /* width: 600px; */
+    margin: 50px auto;
+    padding: 40px;
+
+    padding-top: 0px;/* TODO */
+}
+
+
+.container h2 {
+    border-bottom: 4px solid #2dd5c4;
+
+}
+
+.container .row{
+  display: flex;
+  padding: 0 15px;
+  
+}
+.tbl-container {
+    background: #2dd5c4;
+    /* background: #99ccff;  */
+       padding: 20px;
+       display:grid;
+       grid-template-rows: 1fr ;
+       grid-template-columns: 1fr 1fr ;
+       grid-gap: 2vw;
+      
+}
+.tbl-container > mat-card-content {
+  /* font-size: 5vw;
+  padding: .5em; */
+  border: 1px solid gold;
+  text-align: center;
+}
+.book-caption
+{
+    width:130px;
+    margin: 0 auto;
+}
+.row-flex
+{
+    padding: 0 s13px;
+    display: flex;
+    text-align: left;
+}
+.action-input{
+    height: 40px;
+    width: 300px;
+ 
+
+}
+.calendar-pos{
+    float:left;
+    border: 1px solid red;
+}

@@ -1,0 +1,57 @@
+<div class="container "> 
+    <mat-card class="my-card">
+        <h2> {{headerTxt}}</h2>
+        <div class="form-container"> 
+            <form *ngIf="action"  [formGroup]="rForm" class="tbl-container" >
+                <mat-card-content>
+                    <h1 class='book-caption'>{{header2Txt}}</h1>
+
+                    <mat-form-field class="row-flex form-field" >
+                        <mat-label> Book Name  </mat-label>
+                        <input  class="action-input" matInput  type="text" placeholder="Book Name"
+                        formControlName="bookName"  appAutofocus  maxlength="100" 
+                        [readonly]="action ==BookActions.Delete"           
+                        >
+                        <mat-error *ngIf="(rForm.controls['bookName']?.touched) && rForm.controls['bookName']?.errors">
+                            {{ getBookNameAlert()}}
+                        </mat-error>
+
+                    </mat-form-field>
+                    <mat-form-field class="row-flex form-field" >
+                        <mat-label> Autor Name  </mat-label>
+                        <input  class="action-input" matInput  type="text" placeholder="Autor Name"
+                        formControlName="autorName"  appAutofocus  maxlength="100" 
+                        [readonly]="action ==BookActions.Delete"           
+                        >
+                        <mat-error *ngIf="(rForm.controls['autorName']?.touched) && rForm.controls['autorName']?.errors">
+                            {{ getAutorNameAlert()}}
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="row-flex form-field" >
+                        <mat-label> Сover Photo  </mat-label>
+                        <input  class="action-input" matInput  type="text" placeholder="Сover Photo"
+                        formControlName="coverPhoto"  appAutofocus  maxlength="100" 
+                        [readonly]="action ==BookActions.Delete"           
+                        >
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="calendar-pos">
+                        <mat-label>Publication date</mat-label>
+                        <input matInput [matDatepicker]="bookPublishDate" disabled formControlName="bookPublishDate"> 
+                        <mat-datepicker-toggle matSuffix [for]="bookPublishDate"></mat-datepicker-toggle>
+                        <mat-datepicker #bookPublishDate disabled="false"></mat-datepicker>
+                    </mat-form-field>
+
+
+                    <!-- <div *ngIf="action !=BookActions.Delete">TODO upload picture</div> -->
+                 </mat-card-content>
+                <mat-card-actions>
+                    <div *ngIf="action == BookActions.Add" class="row-flex"><button  type="button" mat-stroked-button (click)="addNewBook()">Add New Book</button></div>
+                    <div *ngIf="action == BookActions.Edit" class="row-flex"><button  type="button" mat-stroked-button (click)="updateBook()">Update Book</button></div>
+                    <div *ngIf="action == BookActions.Delete"class="row-flex"><button  type="button" mat-stroked-button (click)="deleteBook()">{{translations.HeaderDeleteAlbum}}</button></div>
+        
+                </mat-card-actions>   
+
+            </form>
+        </div>
+    </mat-card>
+</div>

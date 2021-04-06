@@ -1,0 +1,72 @@
+.container {
+    /* width: 600px; */
+    margin: 50px auto;
+    padding: 40px;
+    /* direction: rtl; */
+    padding-top: 0px;/* TODO */
+    /* text-align: right; */
+}
+
+.container h2 {
+    /* text-align: right; */
+    border-bottom: 4px solid #2dd5c4;
+}
+
+.container .row{
+  display: flex;
+  padding: 0 15px;
+  
+}
+.header-row{
+    /* border:1px solid red; */
+    direction: ltr;
+    float: right;
+    font-size: 12px;
+}
+.cbo-block {
+    /* text-align: right; */
+  }
+  .books-block{
+    
+    display:flex;
+    padding: 15px;
+    align-content: center;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    background-color: #2dd5c4;
+}
+.book-bottom-row{
+    font-size:16px;
+    /* text-align: right; */
+    line-height: 1.5;
+}
+
+.book-bottom-row i {
+  font-weight: bold;
+}
+.book-cover{
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: 0 auto;
+}
+.example-card {
+    max-width: 200px;
+    background-color: #fff;
+    padding: 16px;
+    margin: 10px 37px;
+    -webkit-box-shadow: 0 15px 10px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 15px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 10px  rgba(0,0,0,0.2);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+  mat-card-title {
+    font-weight: bold;
+  }
+  .action-link{
+    cursor: pointer;
+  }

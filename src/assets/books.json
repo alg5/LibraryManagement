@@ -1,0 +1,23 @@
+[
+    {
+        "AuthorName":"Amanda Gorman",
+        "BookName":"The Hill We Climb",
+        "PublicationDate":"2021-03-30",
+        "CoverPhoto":"coverbook1.jpg",        
+        "CatalogNumber":1    
+    },
+    {
+        "AuthorName":"J.R.R. Tolkien",
+        "BookName":"The Lord of the Rings",
+        "PublicationDate":"2021-10-19",
+        "CoverPhoto":"coverbook2.jpg",        
+        "CatalogNumber":2    
+    },
+    {
+        "AuthorName":"The Boy, the Mole, the Fox and the Horse",
+        "BookName":"Charlie Mackesy",
+        "PublicationDate":"2019-10-22",
+        "CoverPhoto":"coverbook3.jpg",        
+        "CatalogNumber":3    
+    }
+]

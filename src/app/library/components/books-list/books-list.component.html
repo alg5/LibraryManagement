@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>{{translations.WelcomeText}} <span class="header-row">{{translations.LastVisit}}:&nbsp;{{lastDate}} | {{lastTime}}</span></h2>
+
+    <button mat-menu-item (click)="navigateAction(BookActions.Add, 0)" >
+        <mat-icon>add</mat-icon>
+        <span>Add book</span>
+    </button>
+    <div *ngIf="booksList" class="cbo-block">
+        <mat-form-field appearance="fill"  class='cbo-filter'>
+            <mat-label>Select Book Name</mat-label>
+            
+            <mat-select  (selectionChange)="onSelectBook($event)">
+                <mat-option value="0" selected>All books</mat-option>
+                <mat-option *ngFor="let book of booksList" [value]="book.CatalogNumber">
+                {{book.BookName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+
+    <div *ngIf="booksListFiltered && booksListFiltered.length > 0;else nodata" class="books-block">
+        <ng-container   *ngFor="let book of booksListFiltered">
+            <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{book.BookName}}</mat-card-title>
+            </mat-card-header>
+            <!-- src="assets/images/myimage.png"> -->
+                <img mat-card-image class="book-cover" src="assets/images/{{book.CoverPhoto}}" alt=" {{book.BookName}}">
+            <mat-card-content>
+                <div class="book-bottom-row"><i>{{book.AuthorName}}</i></div>
+                <div class="book-bottom-row">{{translations.PublicationDate}}: {{book.PublicationDate |  date: 'dd/MM/yyyy'}}</div>
+            </mat-card-content>
+            <mat-card-footer>
+                <nav>
+                    <a class="button action-link"(click)="navigateAction(BookActions.Edit, book.CatalogNumber)"><mat-icon>edit</mat-icon></a>                       
+                    <a class="button action-link"(click)="navigateAction(BookActions.Delete, book.CatalogNumber)"><mat-icon>delete</mat-icon></a>                       
+
+                </nav>
+            </mat-card-footer>
+        </mat-card>
+        </ng-container>
+    </div>
+    <ng-template #nodata ><div class='no-data'>{{translations.NoDataMessage}}</div></ng-template> 
+
+
+</div>
+
+
+
